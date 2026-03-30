@@ -1,33 +1,33 @@
 name: conditions
-on: [push]
-jobs:
-  conditions-demo:
-    runs-on: ubuntu-latest
-    steps:
-      - name: print helloworld
-        run: "echo hello world"
-
-      - name: trigger the deploy
-        if: github.ref =='ref/heads/main'
-        run: echo deploy to prod" 
-
-      - name: trigger the dev deploy
-        if: github.ref =='ref/heads/feature-*'
-        run: echo deploy to dev" 
-
-#       name: Conditions # workflow name
 # on: [push]
-# jobs: 
+# jobs:
 #   conditions-demo:
 #     runs-on: ubuntu-latest
 #     steps:
-#       - name: Print Hello World
-#         run: echo "Hello, world!"
+#       - name: print helloworld
+#         run: "echo hello world"
 
-#       - name: trigger PROD deploy
-#         if: github.ref == 'refs/heads/main'
-#         run: echo "deploy to PROD"
+#       - name: trigger the deploy
+#         if: github.ref =='ref/heads/main'
+#         run: echo deploy to prod" 
 
-#       - name: trigger DEV deploy
-#         if: github.ref == 'refs/heads/feature-*'
-#         run: echo "deploy to DEV"
+#       - name: trigger the dev deploy
+#         if: github.ref =='ref/heads/feature-*'
+#         run: echo deploy to dev" 
+
+name: Conditions # workflow name
+on: [push]
+jobs: 
+  conditions-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo "Hello, world!"
+
+      - name: trigger PROD deploy
+        if: github.ref == 'refs/heads/main'
+        run: echo "deploy to PROD"
+
+      - name: trigger DEV deploy
+        if: github.ref == 'refs/heads/feature-*'
+        run: echo "deploy to DEV"
