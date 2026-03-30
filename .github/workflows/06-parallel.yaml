@@ -8,7 +8,7 @@ jobs:
         run: sleep 20
 
   job-2:
-    needs: job-1
+    # needs: job-1
     runs-on: ubuntu-latest
     steps:  
       - name: print hello world
@@ -20,7 +20,7 @@ jobs:
         run: sleep 20
 
   job-4:
-    needs: job-2
+    # needs: job-2
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello World
