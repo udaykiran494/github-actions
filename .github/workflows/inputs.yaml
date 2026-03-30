@@ -6,11 +6,11 @@ on:
       username:
         description: "Enter your name"
         required: true
-        default: "Uday"
+        #default: " "
       message:
         description: "Enter a message"
         required: true
-        default: "Hello DevOps"
+        #default: "Hello DevOps"
 
 jobs:
   print-inputs:
