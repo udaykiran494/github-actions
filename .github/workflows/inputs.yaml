@@ -1,0 +1,27 @@
+name: User Input Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: "Enter your name"
+        required: true
+        default: "Uday"
+      message:
+        description: "Enter a message"
+        required: true
+        default: "Hello DevOps"
+
+jobs:
+  print-inputs:
+    runs-on: ubuntu-latest
+
+    env:
+      USER_NAME: ${{ github.event.inputs.username }}
+      USER_MESSAGE: ${{ github.event.inputs.message }}
+
+    steps:
+      - name: Print User Inputs
+        run: |
+          echo "User Name: $USER_NAME"
+          echo "User Message: $USER_MESSAGE"
