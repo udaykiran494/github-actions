@@ -12,8 +12,8 @@ on:
         required: true
         #default: "Hello DevOps"
       type:
-      description: "enter the env"
-      required: true
+        description: "enter the env"
+        required: true
 jobs:
   print-inputs:
     runs-on: ubuntu-latest
