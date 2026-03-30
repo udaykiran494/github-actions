@@ -21,6 +21,7 @@ jobs:
     env:
       USER_NAME: ${{ github.event.inputs.username }}
       USER_MESSAGE: ${{ github.event.inputs.message }}
+      USER_ENV: ${{ github.event.inputs.type }}
 
     steps:
       - name: Print User Inputs
