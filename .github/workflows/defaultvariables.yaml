@@ -1,0 +1,56 @@
+name: Print Default GitHub Variables
+
+# Trigger manually for testing
+on:
+  workflow_dispatch:
+
+jobs:
+  print-defaults:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Environment Variables
+        run: |
+          echo "### ENVIRONMENT VARIABLES ###"
+          echo "Workflow Name: $GITHUB_WORKFLOW"
+          echo "Run ID: $GITHUB_RUN_ID"
+          echo "Run Number: $GITHUB_RUN_NUMBER"
+          echo "Job Name: $GITHUB_JOB"
+          echo "Action Name: $GITHUB_ACTION"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Repository Owner: $GITHUB_REPOSITORY_OWNER"
+          echo "Actor: $GITHUB_ACTOR"
+          echo "Branch / Ref: $GITHUB_REF"
+          echo "Commit SHA: $GITHUB_SHA"
+          echo "Event Name: $GITHUB_EVENT_NAME"
+          echo "Workspace: $GITHUB_WORKSPACE"
+          echo "Server URL: $GITHUB_SERVER_URL"
+          echo "API URL: $GITHUB_API_URL"
+          echo
+
+      - name: Print Using Contexts
+        run: |
+          echo "### GITHUB CONTEXT ###"
+          echo "Repo: ${{ github.repository }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Run Number: ${{ github.run_number }}"
+          echo "Job: ${{ github.job }}"
+          echo "Event Name: ${{ github.event_name }}"
+          echo
+
+          echo "### RUNNER CONTEXT ###"
+          echo "OS: ${{ runner.os }}"
+          echo "Architecture: ${{ runner.arch }}"
+          echo "Name: ${{ runner.name }}"
+          echo
+
+          echo "### ENV CONTEXT ###"
+          echo "Custom Env Example: ${{ env.EXAMPLE_VAR }}"
+          echo
+
+          echo "### SECRETS CONTEXT (will not show values) ###"
+          echo "Example Secret: ${{ secrets.MY_SECRET }}"
