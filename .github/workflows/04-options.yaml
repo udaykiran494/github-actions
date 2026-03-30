@@ -12,7 +12,7 @@ jobs:
  
     steps:
       - name: Start job
-        run: echo "This job will timeout if it runs longer than 5 minutes."
+        run: echo "This job  will timeout if it runs longer than 5 minutes."
 
       - name: Simulate long running task
         run: |
